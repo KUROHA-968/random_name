@@ -29,7 +29,7 @@ const DataProvider = () => {
 
   return (
     <div>
-      <h1>Upload an Excel File</h1>
+      {/* <h1>Upload an Excel File</h1> */}
       <input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} />
       
       {/* Pass the JSON data to the RandomRow component */}

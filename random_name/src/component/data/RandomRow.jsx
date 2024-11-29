@@ -12,17 +12,20 @@ const RandomRow = ({ data }) => {
 
   return (
     <div>
-      <button onClick={getRandomRow}>สุ่มรายชื่อ</button>
+      <button onClick={getRandomRow}>สุ่มรายชื่อ </button>
+
       {randomRow && (
         <div>
-          <h2>Selected Row:</h2>
-          <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
-            {JSON.stringify(randomRow, null, 2)}
-          </pre>
+          <ul>
+            {Object.entries(randomRow).map(([key, value], index) => (
+              <li key={index}>
+                <strong>{key}:</strong> {value}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
   );
 };
-
 export default RandomRow;
